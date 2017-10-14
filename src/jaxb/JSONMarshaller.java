@@ -9,7 +9,7 @@ import com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule;
 import dao.PeopleStore;
 import dao.Setup;
 
-public class JSONPeople {
+public class JSONMarshaller {
 	public static PeopleStore people = new PeopleStore();
 
 	public static void main(String[] args) throws Exception {

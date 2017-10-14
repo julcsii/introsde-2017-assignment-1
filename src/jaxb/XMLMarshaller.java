@@ -13,7 +13,7 @@ import dao.Setup;
 import xml.model.Activity;
 import xml.model.Person;
 
-public class JAXBMarshaller {
+public class XMLMarshaller {
 	public static PeopleStore people = new PeopleStore();
 
 	public static void main(String[] args) throws Exception {

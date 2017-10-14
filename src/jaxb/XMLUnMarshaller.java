@@ -21,7 +21,7 @@ import people.generated.People.Person;
 
 
 
-public class JAXBUnMarshaller {
+public class XMLUnMarshaller {
 	public void unMarshall(File xmlDocument) {
 		try {
 
@@ -63,7 +63,7 @@ public class JAXBUnMarshaller {
 
 	public static void main(String[] argv) {
 		File xmlDocument = new File("people.xml");
-		JAXBUnMarshaller jaxbUnmarshaller = new JAXBUnMarshaller();
+		XMLUnMarshaller jaxbUnmarshaller = new XMLUnMarshaller();
 
 		jaxbUnmarshaller.unMarshall(xmlDocument);
 
