@@ -1,6 +1,8 @@
 # introsde-2017-assignment-1
 University of Trento
+
 Introduction of Service Design Engineering 
+
 2017 Fall
 
 #### Name: Julia Hermann
