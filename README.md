@@ -12,7 +12,7 @@ Introduction of Service Design Engineering
 Reading/Writing objects to and from XML and JSON using Java technologies, JAXB and Jackson, xpath, json, xml/xsd.
 
 #### Code execution
-Clone this repo to a folder and run the compile task from build.xml. This should resolve all necessary dependencies. Then run execute.evaluation from buil.xml to see output on console.
+Clone this repo to a folder and run the install-ivy, resolve and compile tasks sequentially from build.xml. This should resolve all necessary dependencies. Then run execute.evaluation from buil.xml to see output on console.
 
 #### Notes
 
