@@ -1,4 +1,6 @@
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -15,7 +17,7 @@ import javax.xml.xpath.XPathFactory;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
-
+import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 
@@ -27,8 +29,9 @@ import xml.model.Person;
  Make a function that prints all people in the list with details.
  Make a function that accepts the person id as parameter and prints the ActivityPreference of the person with that id.
  Make a function which accepts a date and an operator (=, > , <) as parameters and prints people which preferred activity start_date fulfill that condition \
- (i.e., startdate>2017-13-10, startdate=2017-13-10, etc.).
- */
+ (i.e., startdate>2017-13-10, startdate=2017-13-10, etc.)
+ *
+*/
 public class Queries {
     static Document doc;
     static XPath xpath;
@@ -115,14 +118,15 @@ public class Queries {
 	}
 	
 	
-	public String getSpecPeople(Date date, char operator){
-		return "to be solved";
+	public NodeList getSpecPeople(String date, String operator) throws XPathExpressionException{
+		XPathExpression expr = xpath.compile("/people/person/activitypreference[number(translate(substring(startDate,1,10),'-',''))" + operator + "'" + date + "']");
+		NodeList nodes = (NodeList) expr.evaluate(doc, XPathConstants.NODESET);
+		return nodes;
 	}
 	
 
-	
-    public static void main(String[] args) throws ParserConfigurationException, SAXException,
-    IOException, XPathExpressionException {
+	public static void main(String[] args) throws ParserConfigurationException, SAXException,
+    IOException, XPathExpressionException, ParseException {
 
 		loadXML();
 		Queries q = new Queries();
@@ -144,8 +148,14 @@ public class Queries {
 		System.out.println(q.getActivityStartDate("5"));
 		
 		//return people who started sports before 2017-10-13
-		System.out.println(q.getSpecPeople(new Date(), '>'));
-		
+		String dateInString = "20171013";
+		System.out.println("///////////////List of people starting activity after 2017-10-13////////////////");
+		NodeList nodes = q.getSpecPeople(dateInString, ">");
+		System.out.println(nodes.getLength());
+		for (int i=0;i<nodes.getLength();i++) {
+			System.out.println(nodes.item(i).getParentNode().getTextContent());
+		}
+
 	}
 	
 	
