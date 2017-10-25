@@ -12,7 +12,7 @@ Introduction of Service Design Engineering
 Reading/Writing objects to and from XML and JSON using Java technologies, JAXB and Jackson, xpath, json, xml/xsd.
 
 #### Code execution
-Clone this repo to a folder and run the compile task from build.xml. Then right click ivy.xml and 'Add Ivy Library...'. Then right click on the project and click 'Ivy/Resolve'. This should resolve all necessary dependencies. Then run execute.evaluation from build.xml to see output on console. (This will actually run without adding Ivy library, but the import URIs in some of the classes are still showing as unkown without adding and resolving Ivy. So running the JSONMarshaller.java class as a Java application (without  execute.evaluate target) is not possible unless you add ivy.xml as a library. )
+Clone this repo to a folder and run the compile task from build.xml. Then right click ivy.xml and 'Add Ivy Library...'. Then right click on the project and click 'Ivy/Resolve'. This should create classpath container for dependencies. Then run execute.evaluation from build.xml to see output on console. (This will actually run without adding Ivy library, but the import URIs in some of the classes are still showing as unkown without adding and resolving Ivy. So running the JSONMarshaller.java class as a Java application (without  execute.evaluate target) is not possible unless you add ivy.xml as a library. )
 
 #### Steps of my solution
 
